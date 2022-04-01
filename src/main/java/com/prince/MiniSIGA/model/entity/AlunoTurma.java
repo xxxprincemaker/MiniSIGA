@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "AlunoTurma", schema = "prince", catalog = "")
+@Table(name = "AlunoTurma", schema = "prince")
 public class AlunoTurma {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
