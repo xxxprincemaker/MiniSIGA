@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "Coordenador", schema = "prince", catalog = "")
-public class CoordenadorEntity {
+public class Coordenador {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
@@ -39,7 +39,7 @@ public class CoordenadorEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CoordenadorEntity that = (CoordenadorEntity) o;
+        Coordenador that = (Coordenador) o;
         return Objects.equals(id, that.id) && Objects.equals(nome, that.nome);
     }
 

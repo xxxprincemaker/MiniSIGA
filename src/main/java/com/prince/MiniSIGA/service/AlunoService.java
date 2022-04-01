@@ -1,7 +1,7 @@
 package com.prince.MiniSIGA.service;
 
 import com.prince.MiniSIGA.model.entity.Aluno;
-import com.prince.MiniSIGA.repository.AlunoEntityRepository;
+import com.prince.MiniSIGA.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,25 +9,25 @@ import org.springframework.stereotype.Service;
 public class AlunoService {
 
     @Autowired
-    AlunoEntityRepository alunoEntityRepository;
+    AlunoRepository alunoRepository;
 
     public Aluno getAlunoByName(String name) {
-        return alunoEntityRepository.getAlunoEntityByNome(name);
+        return alunoRepository.getAlunoEntityByNome(name);
     }
 
     public Aluno getAlunoByCPF(String name) {
-        return alunoEntityRepository.getAlunoEntityByCpf(name);
+        return alunoRepository.getAlunoEntityByCpf(name);
     }
 
     public void cadastrar(Aluno aluno) {
-        alunoEntityRepository.save(aluno);
+        alunoRepository.save(aluno);
     }
 
     public void deletar(Aluno aluno) {
-        alunoEntityRepository.delete(aluno);
+        alunoRepository.delete(aluno);
     }
 
     public void update(Aluno aluno) {
-        alunoEntityRepository.save(aluno);
+        alunoRepository.save(aluno);
     }
 }

@@ -1,6 +1,6 @@
 package com.prince.MiniSIGA.controller;
 
-import com.prince.MiniSIGA.model.entity.CursoUfrjEntity;
+import com.prince.MiniSIGA.model.entity.CursoUfrj;
 import com.prince.MiniSIGA.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class CursoUFRJController {
     private CursoService cursoService;
 
     @GetMapping(path = "{numCurso}", produces = "application/json")
-    public CursoUfrjEntity recuperarCursoPorNumero(@PathVariable String numCurso) {
+    public CursoUfrj recuperarCursoPorNumero(@PathVariable String numCurso) {
         return cursoService.recuperarCursoByNum(numCurso);
     }
 }

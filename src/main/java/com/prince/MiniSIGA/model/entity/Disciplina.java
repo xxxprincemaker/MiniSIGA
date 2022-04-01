@@ -8,8 +8,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "AlunoTurma", schema = "prince", catalog = "")
-public class AlunoTurmaEntity {
+@Table(name = "Disciplina", schema = "prince", catalog = "")
+public class Disciplina {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
@@ -17,11 +17,11 @@ public class AlunoTurmaEntity {
     @Type(type = "uuid-char")
     private UUID id;
     @Basic
-    @Column(name = "aluno_id")
-    private String alunoId;
+    @Column(name = "nome")
+    private String nome;
     @Basic
-    @Column(name = "turma_id")
-    private String turmaId;
+    @Column(name = "curso_id")
+    private String cursoId;
 
     public UUID getId() {
         return id;
@@ -31,32 +31,32 @@ public class AlunoTurmaEntity {
         this.id = id;
     }
 
-    public String getAlunoId() {
-        return alunoId;
+    public String getNome() {
+        return nome;
     }
 
-    public void setAlunoId(String alunoId) {
-        this.alunoId = alunoId;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getTurmaId() {
-        return turmaId;
+    public String getCursoId() {
+        return cursoId;
     }
 
-    public void setTurmaId(String turmaId) {
-        this.turmaId = turmaId;
+    public void setCursoId(String cursoId) {
+        this.cursoId = cursoId;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AlunoTurmaEntity that = (AlunoTurmaEntity) o;
-        return Objects.equals(id, that.id) && Objects.equals(alunoId, that.alunoId) && Objects.equals(turmaId, that.turmaId);
+        Disciplina that = (Disciplina) o;
+        return Objects.equals(id, that.id) && Objects.equals(nome, that.nome) && Objects.equals(cursoId, that.cursoId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, alunoId, turmaId);
+        return Objects.hash(id, nome, cursoId);
     }
 }

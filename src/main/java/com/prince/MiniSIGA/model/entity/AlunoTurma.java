@@ -4,13 +4,12 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Historico", schema = "prince", catalog = "")
-public class HistoricoEntity {
+@Table(name = "AlunoTurma", schema = "prince", catalog = "")
+public class AlunoTurma {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
@@ -21,11 +20,8 @@ public class HistoricoEntity {
     @Column(name = "aluno_id")
     private String alunoId;
     @Basic
-    @Column(name = "dataIngresso")
-    private Timestamp dataIngresso;
-    @Basic
-    @Column(name = "cr_medio")
-    private Double crMedio;
+    @Column(name = "turma_id")
+    private String turmaId;
 
     public UUID getId() {
         return id;
@@ -43,32 +39,24 @@ public class HistoricoEntity {
         this.alunoId = alunoId;
     }
 
-    public Timestamp getDataIngresso() {
-        return dataIngresso;
+    public String getTurmaId() {
+        return turmaId;
     }
 
-    public void setDataIngresso(Timestamp dataIngresso) {
-        this.dataIngresso = dataIngresso;
-    }
-
-    public Double getCrMedio() {
-        return crMedio;
-    }
-
-    public void setCrMedio(Double crMedio) {
-        this.crMedio = crMedio;
+    public void setTurmaId(String turmaId) {
+        this.turmaId = turmaId;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        HistoricoEntity that = (HistoricoEntity) o;
-        return Objects.equals(id, that.id) && Objects.equals(alunoId, that.alunoId) && Objects.equals(dataIngresso, that.dataIngresso) && Objects.equals(crMedio, that.crMedio);
+        AlunoTurma that = (AlunoTurma) o;
+        return Objects.equals(id, that.id) && Objects.equals(alunoId, that.alunoId) && Objects.equals(turmaId, that.turmaId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, alunoId, dataIngresso, crMedio);
+        return Objects.hash(id, alunoId, turmaId);
     }
 }

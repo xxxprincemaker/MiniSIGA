@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "Turma", schema = "prince", catalog = "")
-public class TurmaEntity {
+public class Turma {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
@@ -84,7 +84,7 @@ public class TurmaEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TurmaEntity that = (TurmaEntity) o;
+        Turma that = (Turma) o;
         return Objects.equals(id, that.id) && Objects.equals(nome, that.nome) && Objects.equals(codigo, that.codigo) && Objects.equals(disciplinaId, that.disciplinaId) && Objects.equals(professor1Id, that.professor1Id) && Objects.equals(professor2Id, that.professor2Id);
     }
 

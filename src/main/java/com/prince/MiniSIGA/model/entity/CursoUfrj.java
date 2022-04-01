@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "CursoUFRJ", schema = "prince", catalog = "")
-public class CursoUfrjEntity {
+public class CursoUfrj {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
@@ -107,7 +107,7 @@ public class CursoUfrjEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CursoUfrjEntity that = (CursoUfrjEntity) o;
+        CursoUfrj that = (CursoUfrj) o;
         return Objects.equals(id, that.id) && Objects.equals(nome, that.nome) && Objects.equals(nível, that.nível) && Objects.equals(unidade, that.unidade) && Objects.equals(codigoMec, that.codigoMec) && Objects.equals(dataCriacao, that.dataCriacao) && Objects.equals(ativo, that.ativo) && Objects.equals(coordenadorId, that.coordenadorId);
     }
 
